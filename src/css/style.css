@@ -104,7 +104,6 @@ body {
 
 a:link,
 a:visited {
-  color: var(--bs-link-color);
   text-decoration: none;
 }
 
@@ -236,13 +235,38 @@ header * {
   transform: translate(-50%, -50%);
 }
 
-#hero-banner div {
+.hero-banner-text {
   position: absolute;
   background-color: var(--bs-black);
-  opacity: 60%;
+  opacity: 70%;
   height: 75px;
   width: 100%;
   bottom: 0;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.hero-banner-text * {
+  margin-left: 20px;
+  opacity: 100%;
+}
+
+.hero-banner-text a {
+  font-size: 2em;
+}
+
+.hero-banner-text a:hover {
+  font-size: 2em;
+  color: var(--bs-white);
+}
+
+.hero-banner-text p {
+  margin: 0;
+}
+
+.hero-banner-text span {
+  display: block;
 }
 
 /* --------------- Park Header --------------- */
