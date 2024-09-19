@@ -86,11 +86,12 @@
   --bs-highlight-bg: #fff3cd;
 }
 
-/* Global styles */
+/* --------------- Global styles --------------- */
 
 * {
   box-sizing: border-box;
 }
+
 img {
   max-width: 100%;
 }
@@ -104,13 +105,23 @@ body {
 a:link,
 a:visited {
   color: var(--bs-link-color);
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--bs-link-hover-color);
 }
 
-/* Skip links styling */
+button {
+  background-color: transparent;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* --------------- Skip links styling --------------- */
 .skip-links ul {
   list-style-type: none;
   margin: 0;
@@ -131,15 +142,45 @@ a:hover {
   z-index: 9999;
 }
 
-/* Title and logo styling */
+/* ------------------------------ Header ------------------------------ */
 
-.site-title {
+
+header * {
+  color: var(--bs-white);
+}
+
+.global-header {
+  display: flex;
+  background-color: var(--bs-black);
+  padding: 0 20px;
+  height: 60px;
+}
+
+.global-header__right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* --------------- Title and logo styling --------------- */
+
+.icon {
+  fill: var(--bs-white);
+}
+
+.site-title { 
   display: flex;
   align-items: center;
 }
+
+.site-title:visited {
+  color: var(--bs-white);
+}
+
 .site-title > span {
   font-size: 1rem;
   margin-left: 0.3em;
+  vertical-align: middle;
 }
 
 .logo {
@@ -147,12 +188,96 @@ a:hover {
   width: 0;
   margin: 0.5em;
   display: inline-block;
-  border-top: 34px solid var(--bs-light-green);
+  border-top: 34px solid var(--bs-light-green); /* Border-Triangle */
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
 }
 
-/* Utility styles */
+.global-header__right .icon {
+  height: 25px;
+  width: 25px;
+}
+
+.search-icon {
+  margin-right: 20px;
+}
+
+#global-nav-toggle {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-left: var(--bs-grey-2) solid 1px;
+  height: 100%;
+}
+
+#global-nav-toggle svg {
+  margin-left: 20px;
+}
+
+#global-nav-toggle span {
+  font-size: 1.6em;
+}
+
+/* --------------- Hero Section --------------- */
+
+#hero-banner {
+  display: grid; 
+  height: 350px;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+}
+
+#hero-banner img {
+  min-width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hero-banner div {
+  position: absolute;
+  background-color: var(--bs-black);
+  opacity: 60%;
+  height: 75px;
+  width: 100%;
+  bottom: 0;
+}
+
+/* --------------- Park Header --------------- */
+
+#park-header {
+  height: 60px;
+  width: 100%;
+  background-color: var(--bs-black);
+}
+
+#park-header nav {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+}
+
+#park-header .icon {
+  width: 20px;
+  height: 20px;
+}
+
+#park-header a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+#park-header a:hover {
+  background-color: var(--bs-gray-800);
+}
+
+
+/* --------------- Utility styles --------------- */
 
 .visually-hidden {
   position: absolute;
@@ -167,7 +292,3 @@ a:hover {
   overflow: hidden;
 }
 
-svg {
-  background-color: var(--bs-black);
-  fill: white;
-}
