@@ -4,6 +4,9 @@ import { getParkData } from "./parkService.mjs";
 const parkData = getParkData();
 
 (function insertParkData() {
+    // Update Title
+    document.querySelector("head title").textContent = parkData.name;
+    
     // Update Disclaimer
     const realSiteLink = document.querySelector(".disclaimer > a");
     realSiteLink.href = parkData.url;
