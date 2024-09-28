@@ -129,6 +129,7 @@ figure {
 }
 
 /* --------------- Skip links styling --------------- */
+
 .skip-links ul {
   list-style-type: none;
   margin: 0;
@@ -151,6 +152,9 @@ figure {
 
 /* ------------------------------ Header ------------------------------ */
 
+.disclaimer {
+  margin: 20px;
+}
 
 header * {
   color: var(--bs-white);
