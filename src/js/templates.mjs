@@ -2,8 +2,12 @@
 export function mediaCardTemplate(info) {
     return `
         <article>
+            <a href="${info.link}">    
+                <figure>
+                    <img src="${info.image}" alt="${info.name} image"/>
+                </figure>
+            </a>
             <a href="${info.link}"><h2>${info.name}</h2></a>
-            <a href="${info.link}"><img src="${info.image}" alt="${info.name} image"/></a>
             <p>${info.description}</p>
         </article>
     `;
