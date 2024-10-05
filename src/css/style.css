@@ -395,7 +395,7 @@ header * {
 
   figure img {
     width: auto;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
     text-align: center;
   }

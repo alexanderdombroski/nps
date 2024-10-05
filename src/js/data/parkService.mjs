@@ -201,8 +201,12 @@ const parkInfoLinks = [
   }
 ];
 
-function getParkInfoLinks() {
-  return parkInfoLinks;
+function getParkInfoLinks(parkData) {
+  const updatedInfoLinks = parkInfoLinks.map((item, index) => {
+    item.image = parkData.images[index + 2].url;
+    return item;
+  });
+  return updatedInfoLinks;
 }
 
 function getParkData() {
