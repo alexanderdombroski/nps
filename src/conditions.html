@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Park Name]</title>
     <link rel="stylesheet" href="css/style.css">
-    <script type="module" src="js/main.mjs" defer></script>
+    <script type="module" src="js/conditions.mjs" defer></script>
   </head>
   <body>
     <p class="disclaimer">
@@ -127,13 +127,28 @@
       </section>
     </header>
     <main id="main">
-      <section class="intro-section">
-        <h1> </h1>
-        <p> </p>
-      </section>
-      <section class="info-section">
-        
-      </section>
+        <h1>Current Conditions</h1>
+        <section id="alerts">
+            <h2>Alerts</h2>
+            <details name="Alerts">
+                <summary>All Alerts</summary>
+                <ul></ul>
+            </details>
+        </section>
+        <section id="visitorServices">
+            <h2>Visitor Services</h2>
+            <details name="Visitor Services">
+                <summary>Visitor Centers</summary>
+                <ul></ul>
+            </details>
+        </section>
+        <section id="activities">
+            <h2>Activities</h2>
+            <details name="Activities">
+                <summary>All Activities</summary>
+                <ul></ul>
+            </details>
+        </section>
     </main>
     
     <footer id="park-footer"></footer>
