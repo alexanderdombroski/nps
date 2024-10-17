@@ -37,10 +37,15 @@ function insertAlerts(alertData) {
     alerts.innerHTML = alertData.map(alertTemplate, alertData).join('');
 }
 
+function insertActivites(activites) {
+    document.getElementById("activities").querySelector('ul').innerHTML = activites.map(activity => `<li>${activity.name}</li>`).join('');
+}
+
 export {
     insertParkHeader,
     insertFooter,
     insertParkIntro,
     insertParkInfo,
-    insertAlerts
+    insertAlerts,
+    insertActivites
 }

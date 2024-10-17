@@ -1,5 +1,5 @@
 import { fetchParkData, fetchAlertData } from "./data/fetchData.mjs";
-import { insertAlerts, insertFooter, insertParkHeader } from "./render.mjs";
+import { insertAlerts, insertFooter, insertParkHeader, insertActivites } from "./render.mjs";
 
 
 (async function loadPage() {
@@ -9,4 +9,5 @@ import { insertAlerts, insertFooter, insertParkHeader } from "./render.mjs";
     insertParkHeader(parkData);
     insertAlerts(alertData);
     insertFooter(parkData);
+    insertActivites(parkData.activities);
 })();
