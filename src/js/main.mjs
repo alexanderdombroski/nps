@@ -4,7 +4,7 @@ import { fetchParkData } from "./data/fetchData.mjs";
 
 (async function loadInfo() {
     // Get Data
-    const parkData = await fetchParkData("parks?parkCode=yell")
+    const parkData = await fetchParkData()
     const parkInfoLinks = getParkInfoLinks(parkData);
 
     // Manipulate HMTL

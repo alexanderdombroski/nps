@@ -1,5 +1,5 @@
 
-export function mediaCardTemplate(info) {
+function mediaCardTemplate(info) {
     return `
         <article>
             <a href="${info.link}">    
@@ -13,7 +13,7 @@ export function mediaCardTemplate(info) {
     `;
 }
 
-export function heroTextTemplate(parkInfo) {
+function heroTextTemplate(parkInfo) {
     return `
         <a href="#">${parkInfo.name}</a>
         <p>
@@ -23,7 +23,7 @@ export function heroTextTemplate(parkInfo) {
     `;
 }
 
-export function footerTemplate(info) {
+function footerTemplate(info) {
     const mailing = info.addresses.find((address) => address.type === "Mailing");
     const voice = info.contacts.phoneNumbers.find((number) => number.type === "Voice");
     
@@ -39,3 +39,26 @@ export function footerTemplate(info) {
     `;
 }
 
+function alertTemplate(alert) {
+    const type = alert.category === "Park Closure" ? "closure" : alert.category.toLowerCase();
+    
+    return `
+        <li class="alert">
+            <h2>${alert.category}</h2>
+            <svg class="icon" focusable="false" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.symbol.svg#alert-${type}"></use></svg>
+            <div>
+                <h3 class="alert-${type}">${alert.title}</h3>
+                <p>${alert.description}</p>
+                <a href="${alert.url}">More \></a>
+            </div>
+        </li>
+    `;
+}
+
+
+export {
+    heroTextTemplate,
+    mediaCardTemplate,
+    alertTemplate,
+    footerTemplate
+}

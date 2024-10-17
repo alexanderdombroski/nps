@@ -20,9 +20,14 @@ async function fetchData(resourcePath) {
     return data;
 }
 
-async function fetchParkData() {
-    const parkData = await fetchData("parks?parkCode=yell");
+async function fetchParkData(code = "yell") {
+    const parkData = await fetchData(`parks?parkCode=${code}`);
     return parkData.data[0];
 }
 
-export { fetchData as default, fetchParkData } 
+async function fetchAlertData(code = "yell") {
+    const alertData = await fetchData(`alerts?parkCode=${code}`);
+    return alertData.data;
+}
+
+export { fetchData as default, fetchParkData, fetchAlertData } 

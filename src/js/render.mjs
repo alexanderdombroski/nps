@@ -1,6 +1,6 @@
-import { mediaCardTemplate, heroTextTemplate, footerTemplate } from "./templates.mjs";
+import { mediaCardTemplate, heroTextTemplate, footerTemplate, alertTemplate } from "./templates.mjs";
 
-export function insertParkHeader(parkData) {
+function insertParkHeader(parkData) {
     // Update Title
     document.querySelector("head title").textContent = parkData.name;
     
@@ -18,16 +18,29 @@ export function insertParkHeader(parkData) {
     heroText.innerHTML = heroTextTemplate(parkData);
 }
 
-export function insertParkInfo(parkInfoLinks) {
+function insertParkInfo(parkInfoLinks) {
     document.querySelector(".info-section").innerHTML = parkInfoLinks.map(mediaCardTemplate).join("");
 }
 
-export function insertFooter(parkData) {
+function insertFooter(parkData) {
     document.getElementById("park-footer").innerHTML = footerTemplate(parkData)
 }
 
-export function insertParkIntro(parkData) {
+function insertParkIntro(parkData) {
     const main = document.getElementById("main");
     main.querySelector(".intro-section h1").innerText = parkData.fullName;
     main.querySelector(".intro-section p").innerText = parkData.description; 
+}
+
+function insertAlerts(alertData) {
+    const alerts = document.getElementById("alerts").querySelector('ul');
+    alerts.innerHTML = alertData.map(alertTemplate, alertData).join('');
+}
+
+export {
+    insertParkHeader,
+    insertFooter,
+    insertParkIntro,
+    insertParkInfo,
+    insertAlerts
 }
