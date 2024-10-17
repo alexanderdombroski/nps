@@ -1,4 +1,3 @@
-
 function mediaCardTemplate(info) {
     return `
         <article>
@@ -45,7 +44,9 @@ function alertTemplate(alert) {
     return `
         <li class="alert">
             <h2>${alert.category}</h2>
-            <svg class="icon" focusable="false" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/images/sprite.symbol.svg#alert-${type}"></use></svg>
+            <svg class="icon" focusable="false" aria-hidden="true">
+                <use href="${import.meta.env.BASE_URL}images/sprite.symbol.svg#alert-${type}"></use>
+            </svg>
             <div>
                 <h3 class="alert-${type}">${alert.title}</h3>
                 <p>${alert.description}</p>
@@ -55,10 +56,22 @@ function alertTemplate(alert) {
     `;
 }
 
+function visitorCenterTemplate(visitorCenter) {
+    return `
+        <li>
+            <h3>${visitorCenter.name}</h3>
+            <p>${visitorCenter.description}</p>
+            <p>${visitorCenter.directionsInfo}</p>
+        </li>
+    `;
+}
+
+
 
 export {
     heroTextTemplate,
     mediaCardTemplate,
     alertTemplate,
-    footerTemplate
+    footerTemplate,
+    visitorCenterTemplate
 }

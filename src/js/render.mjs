@@ -1,4 +1,4 @@
-import { mediaCardTemplate, heroTextTemplate, footerTemplate, alertTemplate } from "./templates.mjs";
+import { mediaCardTemplate, heroTextTemplate, footerTemplate, alertTemplate, visitorCenterTemplate } from "./templates.mjs";
 
 function insertParkHeader(parkData) {
     // Update Title
@@ -37,6 +37,11 @@ function insertAlerts(alertData) {
     alerts.innerHTML = alertData.map(alertTemplate, alertData).join('');
 }
 
+function insertVisitorCenters(visitorCenterData) {
+    const visitorCenterSection = document.getElementById('visitorServices').querySelector('ul');
+    visitorCenterSection.innerHTML = visitorCenterData.map(visitorCenterTemplate).join('');
+}
+
 function insertActivites(activites) {
     document.getElementById("activities").querySelector('ul').innerHTML = activites.map(activity => `<li>${activity.name}</li>`).join('');
 }
@@ -47,5 +52,6 @@ export {
     insertParkIntro,
     insertParkInfo,
     insertAlerts,
-    insertActivites
+    insertActivites,
+    insertVisitorCenters
 }

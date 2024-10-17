@@ -387,7 +387,7 @@ header * {
   padding: 0;
 } 
 
-.alert {
+.alert, #visitorServices li {
   list-style-type: none;
 }
 
@@ -404,6 +404,7 @@ header * {
   display: inline-block;
   width: 80%;
   vertical-align: top;
+  padding-bottom: 15px;
 }
 
 .alert h3 {
@@ -412,6 +413,14 @@ header * {
 
 .alert a {
   color: var(--bs-link-color);
+}
+
+#alerts div, #visitorServices li {
+  border-bottom: 1px var(--bs-gray-600) solid;
+}
+
+#visitorServices ul {
+  padding-left: 0;
 }
 
 #activities {

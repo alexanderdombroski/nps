@@ -30,4 +30,9 @@ async function fetchAlertData(code = "yell") {
     return alertData.data;
 }
 
-export { fetchData as default, fetchParkData, fetchAlertData } 
+async function fetchVisitorCenterData(code = "yell") {
+    const VisitorCenterData = await fetchData(`visitorcenters?parkCode=${code}`);
+    return VisitorCenterData.data;
+}
+
+export { fetchData as default, fetchParkData, fetchAlertData, fetchVisitorCenterData} 
