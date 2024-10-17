@@ -366,6 +366,8 @@ header * {
 
 /* ------------------------------ Alerts Page ------------------------------ */
 
+/* ----- Alert Colors ----- */
+
 .alert-information {
   color: var(--alert-information);
 }
@@ -379,7 +381,38 @@ header * {
   color: var(--alert-caution);
 }
 
+/* ----- Alert Styles ----- */
 
+#alerts ul {
+  padding: 0;
+} 
+
+.alert {
+  list-style-type: none;
+}
+
+.alert svg {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.alert div {
+  display: inline-block;
+  width: 80%;
+  vertical-align: top;
+}
+
+.alert h3 {
+  margin-top: 0;
+}
+
+.alert a {
+  color: var(--bs-link-color);
+}
 
 /* ------------------------------ Large Screens ------------------------------ */
 
