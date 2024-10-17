@@ -1,3 +1,5 @@
+import spritePath from '../images/sprite.symbol.svg';
+
 function mediaCardTemplate(info) {
     return `
         <article>
@@ -45,7 +47,7 @@ function alertTemplate(alert) {
         <li class="alert">
             <h2>${alert.category}</h2>
             <svg class="icon" focusable="false" aria-hidden="true">
-                <use href="${import.meta.env.BASE_URL}images/sprite.symbol.svg#alert-${type}"></use>
+                <use href="${spritePath}#alert-${type}"></use>
             </svg>
             <div>
                 <h3 class="alert-${type}">${alert.title}</h3>
