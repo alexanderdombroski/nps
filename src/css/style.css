@@ -364,7 +364,7 @@ header * {
   padding: 10px 40px;
 }
 
-/* ------------------------------ Alerts Page ------------------------------ */
+/* ------------------------------ Conditions Page ------------------------------ */
 
 /* ----- Alert Colors ----- */
 
@@ -414,12 +414,15 @@ header * {
   color: var(--bs-link-color);
 }
 
+#activities {
+  margin-bottom: 50px;
+}
+
 /* ------------------------------ Large Screens ------------------------------ */
 
 
-
 @media screen and (min-width: 650px) {
-  #main {
+  #home #main {
     margin: 0 10%;
   }
 }
@@ -441,7 +444,6 @@ header * {
     width: 30%;
   }
 
-
   #main figure {
     position: relative;
     width: 100%;
@@ -456,6 +458,16 @@ header * {
     text-align: center;
   }
 
+  /* ----- Conditions Page ----- */
+
+  #activities ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #activities li {
+    flex: 1 1 50%;
+  }
 
 }
 
