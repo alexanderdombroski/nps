@@ -1,6 +1,6 @@
 import { fetchParkData, fetchAlertData, fetchVisitorCenterData } from "./data/fetchData.mjs";
 import { insertAlerts, insertFooter, insertParkHeader, insertActivites, insertVisitorCenters } from "./render.mjs";
-import { globalMenuListenerSetup } from "./listeners.mjs";
+import { globalMenuListenerSetup, globalSubMenuListenerSetup } from "./listeners.mjs";
 
 (async function loadPage() {
     const parkData = await fetchParkData();
@@ -16,6 +16,7 @@ import { globalMenuListenerSetup } from "./listeners.mjs";
 
 (function initListeners() {
     globalMenuListenerSetup();
+    globalSubMenuListenerSetup();
 })();
 
 // autoCloseToggles

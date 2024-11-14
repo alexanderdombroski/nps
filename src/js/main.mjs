@@ -1,7 +1,7 @@
 import { getParkInfoLinks, getParkData } from "./data/parkService.mjs";
 import { insertParkHeader, insertParkInfo, insertParkIntro, insertFooter } from "./render.mjs";
 import { fetchParkData } from "./data/fetchData.mjs";
-import { globalMenuListenerSetup } from "./listeners.mjs";
+import { globalMenuListenerSetup, globalSubMenuListenerSetup } from "./listeners.mjs";
 
 
 (async function loadInfo() {
@@ -18,4 +18,5 @@ import { globalMenuListenerSetup } from "./listeners.mjs";
 
 (function initListeners() {
     globalMenuListenerSetup();
+    globalSubMenuListenerSetup();
 })();
