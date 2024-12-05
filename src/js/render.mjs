@@ -1,4 +1,8 @@
-import { mediaCardTemplate, heroTextTemplate, footerTemplate, alertTemplate, visitorCenterTemplate } from "./templates.mjs";
+import { 
+    mediaCardTemplate, heroTextTemplate, footerTemplate, alertTemplate, visitorCenterTemplate,
+    vcTitleTemplate, vcInfoTemplate, listTemplate, vcAddressTemplate, vcAddressesListTemplate, vcAmenityTemplate, 
+    vcDirectionsTemplate, vcContactsTemplate, vcImageTemplate, iconTemplate, vcDetailsTemplate
+} from "./templates.mjs";
 
 function insertParkHeader(parkData) {
     // Update Title
@@ -46,6 +50,18 @@ function insertActivites(activites) {
     document.getElementById("activities").querySelector('ul').innerHTML = activites.map(activity => `<li>${activity.name}</li>`).join('');
 }
 
+function insertVisitorCenterPageData(centerData) {
+    document.querySelector(".vc-name").innerHTML = vcTitleTemplate(centerData.name);
+    document.querySelector(".vc-info").innerHTML = vcInfoTemplate(centerData);
+    const detailsEl = document.querySelector(".vc-details-list");
+    detailsEl.innerHTML = "";
+    detailsEl.insertAdjacentHTML("beforeend", vcDetailsTemplate("vcAddresses", "Addresses", "heading-icon_map-pin", vcAddressesListTemplate(centerData.addresses)));
+    detailsEl.insertAdjacentHTML("beforeend", vcDetailsTemplate("vcDirections", "Directions", "directions", vcDirectionsTemplate(centerData.directionsInfo)));
+    detailsEl.insertAdjacentHTML("beforeend", vcDetailsTemplate("vcAmenities", "Amenities", "heading-icon_info", listTemplate(centerData.amenities, vcAmenityTemplate)));
+    detailsEl.insertAdjacentHTML("beforeend", vcDetailsTemplate("vcContacts", "Contacts", "phone", vcContactsTemplate(centerData.contacts)));
+    document.querySelector(".vc-gallery").insertAdjacentHTML("beforeend", listTemplate(centerData.images, vcImageTemplate));
+}
+
 export {
     insertParkHeader,
     insertFooter,
@@ -53,5 +69,6 @@ export {
     insertParkInfo,
     insertAlerts,
     insertActivites,
-    insertVisitorCenters
+    insertVisitorCenters,
+    insertVisitorCenterPageData
 }

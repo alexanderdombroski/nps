@@ -35,4 +35,9 @@ async function fetchVisitorCenterData(code = "yell") {
     return VisitorCenterData.data;
 }
 
-export { fetchData as default, fetchParkData, fetchAlertData, fetchVisitorCenterData} 
+async function fetchVisitorCenter(id) {
+    const parkData = await fetchData(`visitorcenters?id=${id}`);
+    return parkData.data[0];
+}
+
+export { fetchData as default, fetchParkData, fetchAlertData, fetchVisitorCenterData, fetchVisitorCenter} 
